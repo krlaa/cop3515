@@ -1,66 +1,94 @@
+/**
+ * Name: Kevin Antony
+ * COP 3515 Advanced Program Design
+ * Purpose: Takes user input of a phone number with letters and converts it into a proper telphone number
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+/**
+ * Main function
+ * Runs the program and takes phone number with letters and coverts to proper telephone syntax
+ */
 int main()
 {
-    char input[15];
-    int keepGoing = 1;
-    int i = 0;
-    while (keepGoing)
+    //Creates a char array(string) which allows 14 characters used for the number,letters and symbols and 1 char reserved for the null
+    char finalOutput[15];
+
+    //prompts the user to enter a number to be converted
+    printf("Enter phone number: ");
+
+    /** 
+     * A simple for loop using the size of the char array "finalOutput"
+     * Gets the userInput with getchar function and stores it into a char varibale "userI"
+     * Changes the char obtained from user input and casts to a int "ordChar"
+     * Checks "ordChar" and compares to predefined values in a if/esle if statements and converts apporopriately
+     * If the user presses the enter key a null character will get appended to the char array "finalOutput" and breaks the loop
+    */
+    for (int i = 0; i < sizeof(finalOutput); i++)
     {
+        //user input
         char userI = getchar();
+
+        //char to unicode
         int ordChar = userI;
+
         if (userI == '\n')
         {
-            input[i] = '\0';
+            finalOutput[i] = '\0';
             break;
         }
         else
         {
             if (ordChar == 65 || ordChar == 66 || ordChar == 67)
             {
-                input[i] = '2';
+                finalOutput[i] = '2';
             }
             else if (ordChar == 68 || ordChar == 69 || ordChar == 70)
             {
-                input[i] = '3';
+                finalOutput[i] = '3';
             }
             else if (ordChar == 71 || ordChar == 72 || ordChar == 73)
             {
-                input[i] = '4';
+                finalOutput[i] = '4';
             }
             else if (ordChar == 74 || ordChar == 75 || ordChar == 76)
             {
-                input[i] = '5';
+                finalOutput[i] = '5';
             }
             else if (ordChar == 77 || ordChar == 78 || ordChar == 79)
             {
-                input[i] = '6';
+                finalOutput[i] = '6';
             }
             else if (ordChar == 80 || ordChar == 81 || ordChar == 82)
             {
-                input[i] = '7';
+                finalOutput[i] = '7';
             }
             else if (ordChar == 83 || ordChar == 84 || ordChar == 85)
             {
-                input[i] = '8';
+                finalOutput[i] = '8';
             }
             else if (ordChar == 86 || ordChar == 87 || ordChar == 88)
             {
-                input[i] = '9';
+                finalOutput[i] = '9';
             }
             else
             {
-                input[i] = userI;
+                finalOutput[i] = userI;
             }
-
-            i += 1;
         }
     }
-    for (int i = 0; i < strlen(input); i++)
+
+    /**
+     * uses the length of the string "finalOutput" and uses putchar to print out individual chars
+     */
+    for (int i = 0; i < strlen(finalOutput); i++)
     {
-        putchar(input[i]);
+        putchar(finalOutput[i]);
     }
 
+    //Return of main function
     return (0);
 }
