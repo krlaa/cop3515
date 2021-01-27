@@ -42,35 +42,40 @@ int main()
         }
         else
         {
-            if (ordChar == 65 || ordChar == 66 || ordChar == 67)
+            /** 
+             * NOTE: onditions originally used this format: ordChar == 80 || ordChar == 81 || ordChar == 82
+             * Current Code makes the it shorter thus taking up less space
+             */
+
+            if (ordChar>=65 && ordChar<=67)
             {
                 finalOutput[i] = '2';
             }
-            else if (ordChar == 68 || ordChar == 69 || ordChar == 70)
+            else if (ordChar>=68 && ordChar<=70)
             {
                 finalOutput[i] = '3';
             }
-            else if (ordChar == 71 || ordChar == 72 || ordChar == 73)
+            else if (ordChar>=71 && ordChar<=73)
             {
                 finalOutput[i] = '4';
             }
-            else if (ordChar == 74 || ordChar == 75 || ordChar == 76)
+            else if (ordChar>=74 && ordChar<=76)
             {
                 finalOutput[i] = '5';
             }
-            else if (ordChar == 77 || ordChar == 78 || ordChar == 79)
+            else if (ordChar>=77 && ordChar<=79)
             {
                 finalOutput[i] = '6';
             }
-            else if (ordChar == 80 || ordChar == 81 || ordChar == 82)
+            else if (ordChar>=80 && ordChar<=82)
             {
                 finalOutput[i] = '7';
             }
-            else if (ordChar == 83 || ordChar == 84 || ordChar == 85)
+            else if (ordChar>=83 && ordChar<=85)
             {
                 finalOutput[i] = '8';
             }
-            else if (ordChar == 86 || ordChar == 87 || ordChar == 88)
+            else if (ordChar>=86 && ordChar<=88)
             {
                 finalOutput[i] = '9';
             }
