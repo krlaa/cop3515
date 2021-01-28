@@ -28,7 +28,7 @@ int main()
      * If the user presses the enter key a null character will get appended to the char array "finalOutput" and breaks the loop
     */
     for (int i = 0; i < sizeof(finalOutput); i++)
-    {
+    { 
         //user input
         char userI = getchar();
 
@@ -43,10 +43,9 @@ int main()
         else
         {
             /** 
-             * NOTE: onditions originally used this format: ordChar == 80 || ordChar == 81 || ordChar == 82
+             * NOTE: Conditions originally used this format: ordChar == 80 || ordChar == 81 || ordChar == 82
              * Current Code makes the it shorter thus taking up less space
              */
-
             if (ordChar>=65 && ordChar<=67)
             {
                 finalOutput[i] = '2';
