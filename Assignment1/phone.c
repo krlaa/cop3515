@@ -21,7 +21,7 @@ int main()
     printf("Enter phone number: ");
 
     /** 
-     * A simple for loop using the size of the char array "finalOutput"
+     * A simple for loop using the size of the char array(string) "finalOutput"
      * Gets the userInput with getchar function and stores it into a char varibale "userI"
      * Changes the char obtained from user input and casts to a int "ordChar"
      * Checks "ordChar" and compares to predefined values in a if/esle if statements and converts apporopriately
