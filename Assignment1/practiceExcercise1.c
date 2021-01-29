@@ -5,8 +5,6 @@
 */
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <time.h>
 int main(int argc, char const *argv[])
 {
     int userI;
@@ -14,6 +12,13 @@ int main(int argc, char const *argv[])
     printf("Please enter your change: ");
     scanf("%d", &userI);
 
+    /** NOTE: Uses a while loop to continuously subtract if the value orginally inputted mod dollar bill presets are less than user input 
+     * Example: userI = 24
+     * userI(24) % 100 = 24 which is not greater than userI
+     * Therefore the first while loop will not run
+     * Trails down eventually to the for loop used to handle the ones place since x % 1 will alwyas equal 0
+    */
+    
     while (userI % 100 < userI)
     {
         userI -= 100;
