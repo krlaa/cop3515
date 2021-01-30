@@ -5,12 +5,19 @@
 */
 #include <stdio.h>
 #include <string.h>
-int main(int argc, char const *argv[])
+int main()
 {
+    //Variable to hold the users input
     int userI;
+
+    //Var used for for loop
+    int i;
 
     printf("Please enter your change: ");
     scanf("%d", &userI);
+    if(userI>200){
+        main();
+    }
 
     /** NOTE: Uses a while loop to continuously subtract if the value orginally inputted mod dollar bill presets are less than user input 
      * Example: userI = 24
@@ -18,7 +25,6 @@ int main(int argc, char const *argv[])
      * Therefore the first while loop will not run
      * Trails down eventually to the for loop used to handle the ones place since x % 1 will alwyas equal 0
     */
-    
     while (userI % 100 < userI)
     {
         userI -= 100;
@@ -39,10 +45,13 @@ int main(int argc, char const *argv[])
         userI -= 5;
         printf("$5 ");
     }
-    for (int i = 0; i < userI; i++)
+
+    //For loop to handle the numbers 1-9
+    for (i = 0; i < userI; i++)
     {
         printf("$1 ");
     }
 
+    //return for main function
     return 0;
 }

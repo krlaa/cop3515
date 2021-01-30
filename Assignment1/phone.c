@@ -17,6 +17,9 @@ int main()
     //Creates a char array(string) which allows 14 characters used for the number,letters and symbols and 1 char reserved for the null
     char finalOutput[15];
 
+    //Var used for loop
+    int i;
+
     //prompts the user to enter a number to be converted
     printf("Enter phone number: ");
 
@@ -27,7 +30,7 @@ int main()
      * Checks "ordChar" and compares to predefined values in a if/esle if statements and converts apporopriately
      * If the user presses the enter key a null character will get appended to the char array "finalOutput" and breaks the loop
     */
-    for (int i = 0; i < sizeof(finalOutput); i++)
+    for (i = 0; i < sizeof(finalOutput); i++)
     { 
         //user input
         char userI = getchar();
@@ -88,7 +91,7 @@ int main()
     /**
      * uses the length of the string "finalOutput" and uses putchar to print out individual chars
      */
-    for (int i = 0; i < strlen(finalOutput); i++)
+    for (i = 0; i < strlen(finalOutput); i++)
     {
         putchar(finalOutput[i]);
     }
