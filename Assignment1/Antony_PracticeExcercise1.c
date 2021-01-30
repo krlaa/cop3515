@@ -3,8 +3,11 @@
  * COP 3515 Advanced Program Design
  * Purpose: Takes user input of a dollar amount up to 200 then prints out change
 */
+
+//Imports
 #include <stdio.h>
-#include <string.h>
+
+//Main function
 int main()
 {
     //Variable to hold the users input
@@ -15,7 +18,13 @@ int main()
 
     printf("Please enter your change: ");
     scanf("%d", &userI);
-    if(userI>200){
+
+    //This checks if the value is greater than 200 if it is then implements a recursive loop back into the function after prompting to enter a value less than 200
+    if (userI > 200)
+    {
+        printf("Amount larger than 200 please enter an amount less than 200\n");
+
+        //recursive main function
         main();
     }
 
