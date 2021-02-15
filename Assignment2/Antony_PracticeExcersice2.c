@@ -21,10 +21,10 @@ int main()
     // NOTE  This is a loop that runs forever, it only breaks when the user enters in the 0/0/0 date
     while (1)
     {
-        printf("Enter the date: ");
+        printf("Enter the date 1 (mm/dd/yy): ");
         //Scans the first date that has the format day/month/year additionally can accept formats like day-month-year and day.month.year
         // NOTE: The %*[-./] indicates an unassigned value of the regex expression [-./]
-        scanf("%2d%*[-./]%2d%*[-./]%4d", &month1, &day1, &year1);
+        scanf("%d%*[-./]%d%*[-./]%d", &month1, &day1, &year1);
 
         // NOTE: Checks if the input provided are all zeros if so then breaks the while loop
         if (day1 == 0 && month1 == 0 && year1 == 0)
@@ -33,10 +33,10 @@ int main()
         }
         else
         {
-            printf("Enter the date: ");
+            printf("Enter the date 2 (mm/dd/yy):");
             // NOTE: Scans the second that has the format day, month year
             // NOTE: The %*[-./] indicates an unassigned value of the regex expression [-./]
-            scanf("%2d%*[-./]%2d%*[-./]%4d", &month2, &day2, &year2);
+            scanf("%d%*[-./]%d%*[-./]%d", &month2, &day2, &year2);
 
             // NOTE: Checks what year is lower then prints out the appropriate statement
             if (year1 < year2)
