@@ -41,11 +41,11 @@ int main()
             // NOTE: Checks what year is lower then prints out the appropriate statement
             if (year1 < year2)
             {
-                printf("The first date is earlier\n");
+                printf("The first date comes first on the calendar\n");
             }
             else if (year2 < year1)
             {
-                printf("The second date is earlier\n");
+                printf("The second date comes first on the calendar\n");
             }
             else
             {
@@ -53,11 +53,11 @@ int main()
                 // NOTE: Checks what month is lower then prints out the appropriate statement
                 if (month1 < month2)
                 {
-                    printf("The first date is earlier\n");
+                    printf("The first date comes first on the calendar\n");
                 }
                 else if (month2 < month1)
                 {
-                    printf("The second date is earlier\n");
+                    printf("The second date comes first on the calendar\n");
                 }
                 else
                 {
@@ -65,11 +65,11 @@ int main()
                     // NOTE: Checks what day is lower then prints out the appropriate statement
                     if (day1 < day2)
                     {
-                        printf("The first date is earlier\n");
+                        printf("The first date comes first on the calendar\n");
                     }
                     else if (day2 < day1)
                     {
-                        printf("The second date is earlier\n");
+                        printf("The second date comes first on the calendar\n");
                     }
                 }
             }
