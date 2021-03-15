@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-struct Date
+struct date
 {
     int day;
     int month;
     int year;
 };
+int compare_dates(struct date d1, struct date d2);
 int main(int argc, char const *argv[])
 {
 
-    struct Date Date1;
-    struct Date Date2;
+    struct date Date1;
+    struct date Date2;
 
     while (1)
     {
@@ -35,41 +36,54 @@ int main(int argc, char const *argv[])
             {
                 break;
             }
-            else if (Date1.year < Date2.year)
-            {
-                printf("The first date comes first on the calendar\n");
-            }
-            else if (Date1.year > Date2.year)
-            {
-                printf("The second date comes first on the calendar\n");
-            }
             else
             {
-
-                // NOTE: Checks what month is lower then prints out the appropriate statement
-                if (Date1.month < Date2.month)
-                {
-                    printf("The first date comes first on the calendar\n");
-                }
-                else if (Date1.month > Date2.month)
-                {
-                    printf("The second date comes first on the calendar\n");
-                }
-                else
-                {
-
-                    // NOTE: Checks what day is lower then prints out the appropriate statement
-                    if (Date1.day < Date2.day)
-                    {
-                        printf("The first date comes first on the calendar\n");
-                    }
-                    else if (Date1.day > Date2.day)
-                    {
-                        printf("The second date comes first on the calendar\n");
-                    }
-                }
+           compare_dates(Date1,Date2);
             }
         }
     }
     return 0;
+}
+
+int compare_dates(struct date d1, struct date d2)
+{
+    if (d1.year < d2.year)
+    {
+        return -1;
+    }
+    else if (d1.year > d2.year)
+    {
+        return 1;
+    }
+    else
+    {
+
+        // NOTE: Checks what month is lower then prints out the appropriate statement
+        if (d1.month < d2.month)
+        {
+            return -1;
+        }
+        else if (d1.month > d2.month)
+        {
+            return 1;
+        }
+        else
+        {
+
+            // NOTE: Checks what day is lower then prints out the appropriate statement
+            if (d1.day < d2.day)
+            {
+                return -1;
+            }
+            else if (d1.day > d2.day)
+            {
+                return 1;
+            }
+            else
+            {
+                // NOTE: Return 0 if they are the same
+                return 0;
+            }
+        }
+    }
 }
