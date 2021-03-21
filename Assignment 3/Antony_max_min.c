@@ -49,9 +49,9 @@ void max_min(int a[], int *max, int *min)
     //Makes max and min into the first item in the array
     *max = a[0];
     *min = a[0];
-
+    int i = 0;
     //for loop which loops through array, checks and assigns to max and min with pointers
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         if (a[i] > *max)
         {
