@@ -32,18 +32,23 @@ int main()
     }
     
     // NOTE: While loops through until one of the fget funcitons return a NULL value
-    while (fgets(releaseBuff, 80, releasesFile) != NULL && fgets(yearBuff, 80, yearFile) != NULL)
+    while ((fgets(releaseBuff, 80, releasesFile) != NULL) && (fgets(yearBuff, 80, yearFile) != NULL))
     {
 
-        //Removes the newline char from the input read from the corresponding file
-        releaseBuff[strcspn(releaseBuff, "\n")] = 0;
-        yearBuff[strcspn(yearBuff, "\n")] = 0;
+        
+        int index1 = strcspn(releaseBuff, "\n");
+        int index2 = strcspn(yearBuff, "\n");
+ 
+
+//Removes the newline char from the input read from the corresponding file
+        releaseBuff[index1] = 0;
+        yearBuff[index2] = 0;
 
         //Prints based on the format year :release
-        printf("%s :%s\n", yearBuff, releaseBuff);
+        printf("%.4s :%.3s\n", yearBuff, releaseBuff);
         
         //fprintf writes to a stream with formating 
-        fprintf(finalOutFile, "%s :%s\n", yearBuff, releaseBuff);
+        fprintf(finalOutFile, "%.4s :%.3s\n", yearBuff, releaseBuff);
     }
     //closes the files 
     fclose(releasesFile);
